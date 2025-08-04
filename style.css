@@ -1,0 +1,259 @@
+body {
+  margin: 0;
+  font-family: 'Quicksand', sans-serif;
+  background-color: #f7f3e9;
+}
+
+#mainMenu {
+  position: fixed;
+  inset: 0;
+  background: #000; /* fallback base */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 200;
+  overflow: hidden;
+}
+
+/* Add a ::before for the brick texture */
+#mainMenu::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url('https://static.vecteezy.com/system/resources/previews/057/332/777/large_2x/detailed-view-of-a-dark-brick-wall-with-an-intricate-pattern-and-texture-the-lighting-highlights-the-surface-features-free-photo.jpg');
+  background-size: cover;
+  background-repeat: repeat;
+  mix-blend-mode: lighten;
+  filter: brightness(0.9) contrast(1.2);
+  z-index: -2;
+}
+
+/* Add a ::after for the red neon glow overlay */
+#mainMenu::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at center, rgba(255, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 70%, rgba(0, 0, 0, 0.8) 100%);
+  mix-blend-mode: screen;
+  z-index: -1;
+  pointer-events: none;
+}
+
+
+@keyframes flicker {
+  0%, 18%, 22%, 25%, 53%, 57%, 100% {
+    text-shadow:
+        0 0 4px #fff,
+  0 0 8px #ff0095,
+  0 0 16px rgb(255, 0, 64),
+  0 0 32px #f0f;
+  }
+  20%, 24%, 55% {       
+    text-shadow: none;
+  }
+}
+
+#gameTitle {
+  font-family: 'Pacifico', sans-serif;
+  font-size: 100px;
+  color: #ffffff;
+  margin-bottom: 40px;
+  text-rendering: optimizeLegibility;
+  -webkit-text-fill-color: white;
+  text-shadow: 0px 3px 10px rgba(255, 0, 0, 1),
+                0px -3px 10px rgba(255, 0, 0, 1),
+                3px 0px 10px rgba(255, 0, 0, 1),
+                -3px 0px 10px rgba(255, 0, 0, 1),
+               0px 0px 20px rgba(255, 0, 0, 0.8), 
+               0px 0px 32px rgba(255, 0, 0, 0.6),
+               0px 0px 47px rgba(255, 0, 0, 0.4),
+                0px 0px 60px rgba(255, 0, 0, 0.2),
+                0px 0px 73px rgba(255, 0, 0, 0.1);
+  font-weight: 50;
+  z-index: 2;
+}
+
+#startBtn {
+  padding: 14px 28px;
+  font-size: 1.5rem;
+  background-color: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 3px;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transparent 0.3s ease;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(5px);
+-webkit-backdrop-filter: blur(5px);
+}
+
+#startBtn:hover {
+  background-color: rgba(240, 240, 240, 0.5);
+}
+
+/* INTRO SCREEN */
+
+#introOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  color: white;
+  font-family: 'Quicksand', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  z-index: 100;
+  transition: background-color 1s ease-in-out;
+}
+
+
+#introText {
+  text-align: center;
+  max-width: 600px;
+  opacity: 1;
+}
+
+.fade-line {
+  opacity: 0;
+  font-size: 1.5rem;
+  animation: fadeInLine 1.5s ease forwards;
+}
+
+#playBtn {
+  margin-top: 40px;
+  padding: 12px 24px;
+  font-size: 1.2rem;
+  background-color: rgba(255, 255, 255, 0.4);
+  border-top: 2px ridge white;
+  border-radius: 3px;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 1s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* FADE-IN KEYFRAMES */
+@keyframes fadeInLine {
+  to {
+    opacity: 1;
+  }
+}
+
+#gameUI {
+  display: flex;
+  height: 100vh;
+}
+
+#leftPanel {
+  width: 220px;
+  background-color: #2c3e50;
+  color: white;
+  padding: 20px;
+  box-shadow: inset -5px 0 10px #4a6886;
+}
+
+#leftPanel h2 {
+  font-family: 'Pacifico', cursive;
+  font-size: 48px;
+  margin-top: 0;
+  margin-bottom: 20px;
+  text-align: center;
+  color: white; /* color: #ffcc70; */
+  -webkit-text-stroke: 0.5px #ffcc70;
+  text-shadow: 2px 2px 4px #00000088, 0 0 1px #ffcc70, 0 0 22px #ffcc70;
+}
+
+#mainPanel {
+  flex-grow: 1;
+  padding: 20px;
+  overflow-y: auto;
+}
+
+button {
+  font-family: 'Quicksand', sans-serif;
+  padding: 10px;
+  background-color: rgba(255, 255, 255, 0.4);
+  border: 2px ridge white;
+  border-radius: 3px;
+    color: white;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: 0.2s;
+}
+
+button:hover {
+  background-color: rgba(240, 240, 240, 0.5);
+}
+
+.logBox {
+  background-color: #fff;
+  padding: 15px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  height: 90%;
+  overflow-y: auto;
+  flex: reverse;
+}
+
+.logEntry {
+  margin-bottom: 15px;
+  padding-bottom: 10px;
+  border-bottom: 1px dashed #ccc;
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background-color: #fff;
+  padding: 25px;
+  border-radius: 10px;
+  width: 400px;
+  max-width: 90%;
+  text-align: center;
+  font-family: 'Quicksand', sans-serif;
+  color: #333;
+  box-shadow: 0 0 15px #ff6b6b55, 0 0 25px #ffcc70aa;
+  border: 2px dashed #ff6b6b;
+}
+
+.modal-content button {
+  display: block;
+  margin: 10px auto;
+  padding: 8px 12px;
+  background-color: rgba(255, 255, 255, 0.6);
+  border-bottom: 2px ridge rgba(124, 124, 124, 0.8);
+  border-radius: 3px;
+  color: rgb(100, 100, 100);
+  font-weight: bold;
+  cursor: pointer;
+}
+
+@keyframes pulseOpacity {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}

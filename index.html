@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>DinerLife</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- MAIN MENU -->
+  <div id="mainMenu">
+    <h1 id="gameTitle" class="neonText">Diner Life</h1>
+    <button id="startBtn">Start</button>
+  </div>
+
+    <div id="introOverlay" style="display: none;">
+    <div id="introText">
+      <p class="fade-line" style="animation-delay: 0s;">Your Uncle Nelson needs an extra pair of hands at the diner.</p>
+      <p class="fade-line" style="animation-delay: 2s;">Now you are in the family business until you retire at 60.</p>
+      <p class="fade-line" style="animation-delay: 4s;">Have fun! -Emplagued :></p>
+      <button id="playBtn" style="align-self: center; justify-self: center;">Play</button>
+    </div>
+  </div>
+
+  <div id="gameUI">
+    <div id="leftPanel">
+      <h2>DinerLife</h2>
+      <p id="age">Age: 25</p>
+      <p id="money">Money: $10,000</p>
+      <button id="ageUpBtn">Age Up</button>
+    </div>
+    <div id="mainPanel">
+      <div id="log" class="logBox"></div>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
