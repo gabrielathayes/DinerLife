@@ -4,7 +4,7 @@ let reputation = 50;
 let events = [];
 
 window.onload = () => {
-  fetch('data/events.json')
+  fetch('events.json')
     .then(res => res.json())
     .then(data => {
       events = data;
@@ -93,4 +93,5 @@ function handleChoice(choiceIndex, eventObj) {
 
   // Close modal
   document.querySelector(".modal").remove();
+
 }
