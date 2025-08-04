@@ -1,0 +1,30 @@
+[
+  {
+    "id": "rat_problem",
+    "description": "A health inspector found signs of rats in your kitchen.",
+    "choices": [
+      {
+        "text": "Pay for pest control ($2,000)",
+        "effects": { "money": -2000, "reputation": 5 }
+      },
+      {
+        "text": "Ignore it and hope no one notices",
+        "effects": { "reputation": -15 }
+      }
+    ]
+  },
+  {
+    "id": "tiktok_viral",
+    "description": "A TikTok influencer posted a video about your pancakes!",
+    "choices": [
+      {
+        "text": "Thank them publicly",
+        "effects": { "reputation": 10 }
+      },
+      {
+        "text": "Offer them a sponsorship ($1,000)",
+        "effects": { "money": -1000, "reputation": 20 }
+      }
+    ]
+  }
+]
