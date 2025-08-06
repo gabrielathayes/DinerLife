@@ -242,7 +242,7 @@ button:hover {
   margin: 10px auto;
   padding: 8px 12px;
   background-color: rgba(255, 255, 255, 0.6);
-  border-bottom: 2px ridge rgba(124, 124, 124, 0.8);
+  border: 2px ridge rgba(124, 124, 124, 0.8);
   border-radius: 3px;
   color: rgb(100, 100, 100);
   font-weight: bold;
@@ -257,3 +257,4 @@ button:hover {
     opacity: 0.5;
   }
 }
+
